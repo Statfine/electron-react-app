@@ -26,7 +26,7 @@ export default class HomePage extends PureComponent {
     return (
       <div style={{ height: '100vh' }}>
         <Container>
-          <Title>我的第一个桌面应用</Title>
+          <Title>第一个桌面应用</Title>
         </Container>
         <div style={{ height: '60%' }}>Container</div>
         <LinkA to="/todo">跳转到Todo页面</LinkA><br />
