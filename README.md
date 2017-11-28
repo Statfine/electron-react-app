@@ -3,7 +3,9 @@ electron + react(16+)
 
 1.npm install (cnpm install)
 
-2.npm start (Browser http://localhost:3006/)  或者  npm run dev 开启桌面
+2.npm start (Browser http://localhost:3007/) 
+
+3.npm run dev 开启桌面
 
 
 参考：
