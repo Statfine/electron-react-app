@@ -20,7 +20,7 @@ const Title = styled.p`
   height: 100%;
   text-align: center;
   color: #fff;
-  padding-top: 10%;
+  padding-top: 40px;
 `;
 
 const LinkA = styled(Link)`
