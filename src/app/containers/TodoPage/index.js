@@ -3,15 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-
 import Item from './Item';
 
 import injectReducer from '../../../utils/injectReducer';
 import injectSaga from '../../../utils/injectSaga';
-
 import reducer from './reducer';
 import saga from './sagas';
-
 import { todoAdd, todoEdit, todoDelete } from './actions';
 import * as selector from './selectors';
 
