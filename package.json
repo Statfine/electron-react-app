@@ -3,27 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "main": "main.js",
+  "author": "shaojia",
+  "license": "MIT",
   "homepage": ".",
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "immutable": "^3.8.2",
-    "history": "^4.7.2",
-    "react": "^16.1.1",
-    "react-router-redux": "^4.0.8",
+    "babel-polyfill": "6.26.0",
+    "immutable": "3.8.2",
+    "history": "4.7.2",
+    "react": "16.1.1",
+    "react-router-redux": "4.0.8",
     "react-scripts": "1.0.17",
-    "react-redux": "^5.0.5",
+    "react-redux": "5.0.5",
     "redux": "3.6.0",
     "redux-immutable": "4.0.0",
     "redux-saga": "0.15.3",
     "react-intl": "2.3.0",
     "react-loadable": "4.0.3",
-    "react-router-config": "^1.0.0-beta.4",
-    "whatwg-fetch": "^2.0.3",
-    "lodash": "^4.17.4",
-    "reselect": "^3.0.1",
-    "prop-types": "^15.6.0",
-    "hoist-non-react-statics": "^2.3.1",
-    "invariant": "^2.2.2"
+    "react-router-config": "1.0.0-beta.4",
+    "whatwg-fetch": "2.0.3",
+    "lodash": "4.17.4",
+    "reselect": "3.0.1",
+    "prop-types": "15.6.0",
+    "hoist-non-react-statics": "2.3.1",
+    "invariant": "2.2.2"
   },
   "babel": {
     "plugins": [
@@ -48,9 +50,9 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "electron": "^1.7.9",
-    "react-router-dom": "^4.2.2",
-    "styled-components": "2.0.0",
-    "react-dom": "^16.1.1"
+    "electron": "1.7.9",
+    "react-router-dom": "4.2.2",
+    "react-dom": "16.1.1",
+    "styled-components": "2.0.0"
   }
 }
