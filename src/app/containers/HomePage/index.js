@@ -43,6 +43,7 @@ class HomePage extends PureComponent {
         </Container>
         <div style={{ height: '60%' }}><div onClick={this.handleCLick}>click</div></div>
         <LinkA to="/todo">跳转到Todo页面</LinkA><br />
+        <LinkA to="/network">跳转到NetWork页面</LinkA><br />
         <LinkA to="abort">Abort</LinkA>
       </div>
     );

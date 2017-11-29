@@ -14,7 +14,7 @@ class Item extends PureComponent {
     const { inputValue } = this.state;
     if (inputValue.length === 0) this.titleInput.focus();
     else {
-      this.props.actionTodoEdit({ id: itemObj.id, text: inputValue });
+      actionTodoEdit({ id: itemObj.id, text: inputValue });
       this.setState({ openEdit: false });
     }  
   }

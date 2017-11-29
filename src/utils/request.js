@@ -16,14 +16,8 @@ function parseJSON(response) {
 }
 
 function parseData(data) {
-  // token失效时页面刷新
-  if (data.code === 9001) {
-    localStorage.refreshing_token = 0;
-    localStorage.expires_in = Date.now();
-    return location.reload();
-  }
 
-  if (data.code === 0 || (data.status_code >= 200 && data.status_code < 300)) {
+  if (data.code === 200) {
     return data;
   }
 
@@ -43,10 +37,10 @@ function parseData(data) {
 export function requestNoSnack(url, options) {
   const defaultOptions = {
     method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
+    // headers: {
+    //   Accept: 'application/json;charset=utf8',
+    //   'Content-Type': 'application/json;charset=utf8',
+    // },
   };
 
   if (global.window.localStorage.access_token) {
@@ -62,10 +56,8 @@ export function requestNoSnack(url, options) {
 export default function request(url, options) {
   return requestNoSnack(url, options)
     .catch((error) => {
-      if (url.indexOf('auth/refresh_token') < 0) {
-        const msg = error.message ? error.message : error;
-        alert(msg);
-      }
+      const msg = error.message ? error.message : error;
+      alert(msg);
       throw error;
     });
 }
