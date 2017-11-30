@@ -1,5 +1,12 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router-dom';
+
+import { makeSelectLoading } from '../App/selectors';
+import { refreshToken } from '../App/actinos';
 
 import styled from 'styled-components';
 
@@ -13,25 +20,53 @@ const Title = styled.p`
   height: 100%;
   text-align: center;
   color: #fff;
-  padding-top: 10%;
+  padding-top: 40px;
 `;
 
 const LinkA = styled(Link)`
   color: #999;
 `;
 
-export default class HomePage extends PureComponent {
+class HomePage extends PureComponent {
   state={}
+
+  handleCLick = () => {
+    this.props.refreshToken();
+  }
+
   render() {
+    const { loading } = this.props;
     return (
       <div style={{ height: '100vh' }}>
         <Container>
-          <Title>第一个桌面应用</Title>
+          <Title>{loading ? '第一个桌面应用' : '你点击了我'}</Title>
         </Container>
-        <div style={{ height: '60%' }}>Container</div>
+        <div style={{ height: '60%' }}><div onClick={this.handleCLick}>click</div></div>
         <LinkA to="/todo">跳转到Todo页面</LinkA><br />
+        <LinkA to="/network">跳转到NetWork页面</LinkA><br />
         <LinkA to="abort">Abort</LinkA>
       </div>
     );
   }
 }
+
+HomePage.propTypes = {
+  refreshToken: PropTypes.func,
+  loading: PropTypes.bool,
+};
+
+const mapStateToProps = createStructuredSelector({
+  loading: makeSelectLoading(),
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    refreshToken: () => dispatch(refreshToken()),
+  };
+}
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(
+  withConnect,
+)(HomePage);

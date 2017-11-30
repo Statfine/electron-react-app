@@ -15,3 +15,8 @@ http://www.jianshu.com/p/785ed0ac08ee
 https://github.com/facebookincubator/create-react-app
 
 https://github.com/electron/electron-quick-start
+
+
+error
+ 
+ 打包问题， 本地变异之后起桌面程序

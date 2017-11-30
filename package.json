@@ -3,22 +3,59 @@
   "version": "0.1.0",
   "private": true,
   "main": "main.js",
+  "author": "shaojia",
+  "license": "MIT",
   "homepage": ".",
   "dependencies": {
-    "react": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "babel-polyfill": "6.26.0",
+    "immutable": "3.8.2",
+    "history": "4.7.2",
+    "react": "16.1.1",
+    "react-router-redux": "4.0.8",
+    "react-scripts": "1.0.17",
+    "react-redux": "5.0.5",
+    "redux": "3.6.0",
+    "redux-immutable": "4.0.0",
+    "redux-saga": "0.15.3",
+    "react-intl": "2.3.0",
+    "react-loadable": "4.0.3",
+    "react-router-config": "1.0.0-beta.4",
+    "whatwg-fetch": "2.0.3",
+    "lodash": "4.17.4",
+    "reselect": "3.0.1",
+    "prop-types": "15.6.0",
+    "hoist-non-react-statics": "2.3.1",
+    "invariant": "2.2.2"
+  },
+  "babel": {
+    "plugins": [
+      "styled-components"
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ],
+      "react",
+      "stage-0"
+    ]
   },
   "scripts": {
     "start": "PORT=3007 react-scripts start",
     "dev": "electron .",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "packager": "electron-packager ./build/ HelloWorld --all --out ./outApp --version 1.4.0 --overwrite --icon=./public/favicon.ico"
   },
   "devDependencies": {
-    "electron": "^1.7.9",
-    "react-router-dom": "^4.2.2",
+    "electron": "1.7.9",
+    "react-router-dom": "4.2.2",
+    "react-dom": "16.1.1",
     "styled-components": "2.0.0",
-    "react-dom": "^16.1.1"
+    "electron-builder": "^19.46.9",
+    "electron-packager": "^10.1.0"
   }
 }
